@@ -1069,13 +1069,13 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     {
         if(nHeight < 105140)
         {
-		nSubsidy = 1.5; //0.0000015;
+		nSubsidy = 1.5 * COIN; //0.0000015;
         }
 	else
 	{
                 // Subsidy reduces by 10% every year
                 // will take a little over 10 years to mine all blocks
-		nSubsidy = 1.5 * (pow(0.9,((nHeight/105120) - 1)));
+		nSubsidy = 1.5 * (pow(0.9,((nHeight/105120) - 1))) * COIN;
 	}
     }
     // Subsidy is cut in half every 840000 blocks, which will occur approximately every 4 years
